@@ -1,23 +1,20 @@
 import React from 'react'
 import { Container } from './elements'
-import { size } from '../../assets/styles/theme'
-import useMediaQuery from 'react-responsive/src/useMediaQuery';
 import TopNav from './TopNav';
 import BottomNav from './BottomNav';
 import CenterNav from './CenterNav';
+import { GiCancel } from 'react-icons/gi';
 
-const Navbar = () => {
-  const underTabletSize = useMediaQuery({ maxWidth: size.tablet })
-
-  if (underTabletSize) {
-    return (
-      <>
-      </>
-    )
-  }
-
+const Navbar = ({ open, handleClick, BurgerMenu }) => {
   return (
     <Container>
+      {open &&
+        <>
+        <BurgerMenu onClick={handleClick}>
+          <GiCancel />
+        </BurgerMenu>
+        </>
+      }
       <TopNav />
       <CenterNav />
       <BottomNav/>

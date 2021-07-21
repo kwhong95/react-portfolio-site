@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import Navbar from './Navbar';
-import styled from 'styled-components';
+import React, { useState } from 'react'
+import Navbar from './Navbar'
+import styled from 'styled-components'
 import useMediaQuery from 'react-responsive/src/useMediaQuery'
-import { size } from '../assets/styles/theme';
+import { size } from '../assets/styles/theme'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import Modal from 'react-modal'
 
 const Container = styled.div`
   display: flex;
@@ -37,9 +38,14 @@ const BurgerMenu = styled.button`
   color: gray;
 `
 
+const StyledModal = styled(Modal)`
+  width: 100%;
+  height: 100%;
+`
+
 const Layouts = ({ children }) => {
-  const [open, setOpen] = useState(false);
-  const underTabletLayout = useMediaQuery({ maxWidth: size.tablet });
+  const [open, setOpen] = useState(false)
+  const underTabletLayout = useMediaQuery({ maxWidth: size.tablet })
 
   const handleClick = () => {
     setOpen(!open);
@@ -52,6 +58,13 @@ const Layouts = ({ children }) => {
           <BurgerMenu onClick={handleClick}>
             <GiHamburgerMenu />
           </BurgerMenu>
+          <StyledModal isOpen={open} ariaHideApp={false}>
+            <Navbar
+              open={open}
+              handleClick={handleClick}
+              BurgerMenu={BurgerMenu}
+            />
+          </StyledModal>
           {children}
         </SectionLayout>
       </Container>

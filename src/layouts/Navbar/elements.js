@@ -11,4 +11,8 @@ export const Container = styled.nav`
   height: 96vh;
   background: rgba(0, 0, 0, 0.95);
   color: #fff;
+  
+  @media ${({theme}) => theme.tablet} {
+    width: 100%;
+  }
 `
