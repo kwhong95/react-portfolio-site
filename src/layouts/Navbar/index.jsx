@@ -2,21 +2,25 @@ import React from 'react'
 import { Container } from './elements'
 import { size } from '../../assets/styles/theme'
 import useMediaQuery from 'react-responsive/src/useMediaQuery';
+import TopNav from './TopNav';
+import BottomNav from './BottomNav';
+import CenterNav from './CenterNav';
 
 const Navbar = () => {
   const underTabletSize = useMediaQuery({ maxWidth: size.tablet })
 
   if (underTabletSize) {
     return (
-      <Container>
-        <h1>underTablet</h1>
-      </Container>
+      <>
+      </>
     )
   }
 
   return (
     <Container>
-      <h1>overTablet</h1>
+      <TopNav />
+      <CenterNav />
+      <BottomNav/>
     </Container>
   )
 }

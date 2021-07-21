@@ -7,6 +7,8 @@ const size = {
 
 const theme = {
   mainColor: '#fff',
+  navWidth: '8rem',
+  padding: '1rem',
   mobile: `(max-width: ${size.mobile})`,
   tablet: `(max-width: ${size.tablet})`,
   laptop: `(max-width: ${size.laptop})`,
