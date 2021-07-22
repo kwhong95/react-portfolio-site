@@ -2,7 +2,7 @@ const NavItems = [
   {
     id: 1,
     name: 'HOME',
-    to: '/',
+    to: '/home',
   },
   {
     id: 2,

@@ -28,9 +28,21 @@ const App = () => {
                       section3
                     </Section>
                   </Route>
-                  <Route path='/about'>About Page</Route>
-                  <Route path='/project'>Project Page</Route>
-                  <Route path='/contact'>Contact Page</Route>
+                  <Route path='/about'>
+                    <Section>
+                      AboutPage
+                    </Section>
+                  </Route>
+                  <Route path='/project'>
+                    <Section>
+                      ProjectPage
+                    </Section>
+                  </Route>
+                  <Route path='/contact'>
+                    <Section>
+                      ContactPage
+                    </Section>
+                  </Route>
               </Route>
             </Layouts>
           </Switch>
