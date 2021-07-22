@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components';
 import useMediaQuery from 'react-responsive/src/useMediaQuery'
 import { size } from '../assets/styles/theme'
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -38,9 +38,17 @@ const BurgerMenu = styled.button`
   color: gray;
 `
 
+const setModalAnimation = keyframes`
+  100% { top:0; opacity: 1; }
+`
+
 const StyledModal = styled(Modal)`
+  position: absolute;
+  top: -100%;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  animation: ${setModalAnimation} 1s ease-in-out forwards;
 `
 
 const Layouts = ({ children }) => {
