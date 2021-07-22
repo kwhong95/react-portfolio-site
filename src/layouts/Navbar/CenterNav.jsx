@@ -21,11 +21,14 @@ const MenuList = styled.ul`
 
 
 const CenterNav = () => {
+
   return (
     <Container>
       <MenuList>
         {NavItems.map((item) => (
-          <NavLink key={item.id} to={item.to}>{item.name}</NavLink>
+          <NavLink key={item.id} to={item.to} >
+            {item.name}
+          </NavLink>
         ))}
       </MenuList>
     </Container>

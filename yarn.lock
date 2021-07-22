@@ -9239,6 +9239,13 @@ react-router-dom@^5.2.0:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
+react-router-loading@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/react-router-loading/-/react-router-loading-0.3.0.tgz#7eef722a315afe8aabb238f3bfaf15462eddfd89"
+  integrity sha512-4DpmA7JTNqVLQttLKZa2sKsSdwWgHDNhVhXFzIXVYnIgNa8a+DUtpdpZRmeGs0wM/zZnPcpElUCxT+wuPqp9HA==
+  dependencies:
+    topbar "^1.0.1"
+
 react-router@5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-5.2.0.tgz#424e75641ca8747fbf76e5ecca69781aa37ea293"
@@ -10806,6 +10813,11 @@ toidentifier@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
   integrity sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
+
+topbar@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/topbar/-/topbar-1.0.1.tgz#7987fb9ea40ce702ed2d9fcded3407a8ae5a33a9"
+  integrity sha512-HZqQSMBiG29vcjOrqKCM9iGY/h69G5gQH7ae83ZCPz5uPmbQKwK0sMEqzVDBiu64tWHJ+kk9NApECrF+FAAvRA==
 
 tough-cookie@^2.3.3, tough-cookie@~2.5.0:
   version "2.5.0"

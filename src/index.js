@@ -1,65 +1,39 @@
-import React from "react"
+import React from 'react';
 import ReactDOM from 'react-dom'
-import {ThemeProvider} from "styled-components"
+import { ThemeProvider } from "styled-components"
 import { theme } from "./assets/styles/theme"
 import GlobalStyle from "./assets/styles/global"
-import Layouts from './layouts'
-import styled from 'styled-components'
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Switch, Route } from 'react-router-loading'
+import PageList from './pages/PageList'
+import Loader from './layouts/Loader';
 
-const App = () => {
+const App = ({ history }) => {
+
   return (
     <React.StrictMode>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Router>
-          <Switch>
-            <Layouts>
-              <Route path='/' >
-                <Redirect to='/home' />
-                  <Route path='/home'>
-                    <Section>
-                      section1
-                    </Section>
-                    <Section>
-                      section2
-                    </Section>
-                    <Section>
-                      section3
-                    </Section>
-                  </Route>
-                  <Route path='/about'>
-                    <Section>
-                      AboutPage
-                    </Section>
-                  </Route>
-                  <Route path='/project'>
-                    <Section>
-                      ProjectPage
-                    </Section>
-                  </Route>
-                  <Route path='/contact'>
-                    <Section>
-                      ContactPage
-                    </Section>
-                  </Route>
-              </Route>
-            </Layouts>
+        <Router history={history}>
+          <Switch loadingScreen={Loader}>
+            {PageList.map((page, idx) => (
+              <Route
+                key={idx}
+                exact={page.exact}
+                path={page.path}
+                render={props => (
+                  <page.layout history={props.history}>
+                    <page.component {...props} />
+                  </page.layout>
+                )}
+              />
+            ))}
           </Switch>
         </Router>
       </ThemeProvider>
     </React.StrictMode>
   )
 }
-
-
-const Section = styled.section`
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid blue;
-`
 
 const rootElement = document.getElementById('root')
 ReactDOM.render(<App />, rootElement)
