@@ -11,8 +11,35 @@ const KineticTypography = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current
-    canvas.width = window.innerWidth / 2
-    canvas.height = window.innerHeight / 2
+    const ctx = canvas.getContext('2d')
+
+    const setText = (str, density, stageWidth, stageHeight) => {
+      canvas.width = stageWidth
+      canvas.height = stageHeight
+
+      const myText = str
+      const fontWidth = 700
+      const fontSize = 800
+      const fontName = 'sans-serif'
+
+      ctx.clearRect(0, 0, stageWidth, stageHeight)
+      ctx.font = `${fontWidth} ${fontSize}px ${fontName}`
+      ctx.fillStyle = `rgba(0, 0, 0, 0.3)`
+      ctx.textBaseline = `middle`
+
+      const fontPos = ctx.measureText(myText)
+      ctx.fillText(
+        myText,
+        (stageWidth - fontPos.width) / 2,
+        fontPos.actualBoundingBoxAscent +
+        fontPos.actualBoundingBoxDescent +
+        ((stageHeight - fontSize) / 2)
+      )
+
+      return dotPos(density, stageWidth, stageHeight)
+    }
+
+    const dotPos = (density, stageWidth, stageHeight) => { }
 
     setCanvasTag(canvas)
   }, [])
