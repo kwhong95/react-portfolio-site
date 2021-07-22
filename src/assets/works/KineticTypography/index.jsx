@@ -1,38 +1,26 @@
-import * as PIXI from 'pixi.js';
-import { Stage, Text } from '@inlet/react-pixi'
+import React, { useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
 
-const width = 1200;
-const height = 1800;
-
-
-const style = new PIXI.TextStyle({
-  fontFamily: "sans-serif",
-  fontSize: 80,
-  fontWeight: "bold",
-  fill: ["#fff"],
-  stroke: "#eef1f5",
-  strokeThickness: 3,
-  letterSpacing: 5,
-  wordWrap: true,
-  wordWrapWidth: 2000,
-});
-
+const Wrap = styled.div``
 
 const KineticTypography = () => {
-  const word = "Hi,|I'm Kyle,|I love Interactive Web".split('|')
+  const canvasRef = useRef(null)
+  const [canvasTag, setCanvasTag] = useState([])
+
+  console.log(`canvasTag :`, canvasTag)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    canvas.width = window.innerWidth / 2
+    canvas.height = window.innerHeight / 2
+
+    setCanvasTag(canvas)
+  }, [])
 
   return (
-    <Stage width={width} height={height} options={{ autoDensity: true, backgroundColor: 0x1d1d1d }}>
-      {word.map((word, idx) => (
-        <Text
-          key={idx}
-          x={width/ 20}
-          y={height / 2.5 + idx * 100}
-          style={style}
-          text={word}
-        />
-      ))}
-    </Stage>
+    <Wrap>
+      <canvas ref={canvasRef} />
+    </Wrap>
   )
 }
 

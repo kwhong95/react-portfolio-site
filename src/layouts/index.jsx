@@ -54,13 +54,13 @@ const StyledModal = styled(Modal)`
 
 const Layouts = ({ children }) => {
   const [open, setOpen] = useState(false)
-  const underTabletLayout = useMediaQuery({ maxWidth: size.tablet })
+  const underLaptopLayout = useMediaQuery({ maxWidth: size.laptop })
 
   const handleClick = () => {
     setOpen(!open);
   }
 
-  if (underTabletLayout) {
+  if (underLaptopLayout) {
     return (
       <Container>
         <SectionLayout>

@@ -10,8 +10,9 @@ export const Container = styled.nav`
   height: 100vh;
   background: #181818;
   color: #fff;
+  z-index: 3;
   
-  @media ${({theme}) => theme.tablet} {
+  @media ${({theme}) => theme.laptop} {
     width: 100%;
   }
 `
