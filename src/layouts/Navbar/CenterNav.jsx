@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import NavItems from './NavItems'
 
 const Container = styled.nav`
-  margin-bottom: 5em;
+  margin-bottom: 8em;
 `
 const MenuList = styled.ul`
   display: flex;

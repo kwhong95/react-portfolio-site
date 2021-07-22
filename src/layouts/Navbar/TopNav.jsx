@@ -9,6 +9,8 @@ const Container = styled.article`
   flex-direction: column;
   align-items: center;
   color: ${theme.mainColor};
+  background-color: black;
+  padding: 1rem 0;
 `
 
 const Nickname = styled.h3`

@@ -6,10 +6,9 @@ export const Container = styled.nav`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
   width: ${({ theme })=> theme.navWidth};
-  height: 96vh;
-  background: rgba(0, 0, 0, 0.95);
+  height: 100vh;
+  background: #181818;
   color: #fff;
   
   @media ${({theme}) => theme.tablet} {

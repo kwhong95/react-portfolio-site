@@ -5,7 +5,6 @@ import { FaInstagram } from 'react-icons/fa'
 
 const Container = styled.article`
   display: flex;
-  
   a {
     color: lightgray;
     padding: .3em;

@@ -2,6 +2,7 @@ import React from 'react'
 import { pageTransition, HomePageVariants } from '../assets/animations/pageAnimations'
 import styled from 'styled-components'
 import { motion } from 'framer-motion';
+import KineticTypography from '../assets/works/KineticTypography';
 
 const Container = styled(motion.div)`
   display: flex;
@@ -20,7 +21,7 @@ const Home = () => {
       variants={HomePageVariants}
       transition={pageTransition}
     >
-        <h1>Hello</h1>
+      <KineticTypography />
     </Container>
   )
 }
