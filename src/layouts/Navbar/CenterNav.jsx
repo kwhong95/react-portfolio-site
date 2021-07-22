@@ -15,7 +15,7 @@ const MenuList = styled.ul`
   
   a {
     text-decoration: none;
-    color: lightgray;
+    color: gray;
   }
 `
 
@@ -26,7 +26,15 @@ const CenterNav = () => {
     <Container>
       <MenuList>
         {NavItems.map((item) => (
-          <NavLink key={item.id} to={item.to} exact={item.exact}>
+          <NavLink
+            key={item.id}
+            to={item.to}
+            exact={item.exact}
+            activeClassName="selected"
+            activeStyle={{
+              color: '#fff'
+            }}
+          >
             {item.name}
           </NavLink>
         ))}
