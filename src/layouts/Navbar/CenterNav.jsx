@@ -1,14 +1,33 @@
 import React from 'react'
-import styled from 'styled-components';
+import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
+import NavItems from './NavItems'
 
-const Container = styled.article`
-  border: 1px solid purple;
+const Container = styled.nav`
+  margin-bottom: 5em;
 `
+const MenuList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  font-size: 18px;
+  line-height: 2em;
+  
+  a {
+    text-decoration: none;
+    color: lightgray;
+  }
+`
+
 
 const CenterNav = () => {
   return (
     <Container>
-      CenterNav
+      <MenuList>
+        {NavItems.map((item) => (
+          <NavLink key={item.id} to={item.to}>{item.name}</NavLink>
+        ))}
+      </MenuList>
     </Container>
   )
 }

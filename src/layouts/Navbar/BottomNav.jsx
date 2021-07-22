@@ -8,7 +8,7 @@ const Container = styled.article`
 const BottomNav = () => {
   return (
     <Container>
-      BottomNav
+      SNS ICON
     </Container>
   )
 }
