@@ -1,20 +1,27 @@
 import React from 'react'
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { pageTransition, pageVariants } from '../assets/animations/pageAnimations';
 
 const Project = () => {
   return (
-    <Section>
+    <Container
+      variants={pageVariants}
+      initial="initial"
+      animate="in"
+      exit="out"
+      transition={pageTransition}
+    >
       Project Page
-    </Section>
+    </Container>
   )
 }
 
-const Section = styled.section`
+const Container = styled(motion.main)`
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  border: 1px solid blue;
 `
 
 export default Project;

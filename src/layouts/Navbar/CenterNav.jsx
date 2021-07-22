@@ -26,7 +26,7 @@ const CenterNav = () => {
     <Container>
       <MenuList>
         {NavItems.map((item) => (
-          <NavLink key={item.id} to={item.to} >
+          <NavLink key={item.id} to={item.to} exact={item.exact}>
             {item.name}
           </NavLink>
         ))}

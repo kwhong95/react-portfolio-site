@@ -1,28 +1,28 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import { pageTransition, HomePageVariants } from '../assets/animations/pageAnimations'
+import styled from 'styled-components'
+import { motion } from 'framer-motion';
 
-const Home = () => {
-  return (
-    <>
-      <Section>
-        section1
-      </Section>
-      <Section>
-        section2
-      </Section>
-      <Section>
-        section3
-      </Section>
-    </>
-  )
-}
-
-const Section = styled.section`
+const Container = styled(motion.div)`
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  border: 1px solid blue;
 `
+
+
+const Home = () => {
+  return (
+    <Container
+      initial='initial'
+      animate='in'
+      exit='out'
+      variants={HomePageVariants}
+      transition={pageTransition}
+    >
+        <h1>Hello</h1>
+    </Container>
+  )
+}
 
 export default Home

@@ -36,6 +36,7 @@ const BurgerMenu = styled.button`
   background: none;
   cursor: pointer;
   color: gray;
+  z-index: 3;
 `
 
 const setModalAnimation = keyframes`
@@ -64,7 +65,7 @@ const Layouts = ({ children }) => {
       <Container>
         <SectionLayout>
           <BurgerMenu onClick={handleClick}>
-            <GiHamburgerMenu />
+            {!open && <GiHamburgerMenu /> }
           </BurgerMenu>
           <StyledModal isOpen={open} ariaHideApp={false}>
             <Navbar
@@ -73,7 +74,7 @@ const Layouts = ({ children }) => {
               BurgerMenu={BurgerMenu}
             />
           </StyledModal>
-          {children}
+            {children}
         </SectionLayout>
       </Container>
     )
@@ -83,7 +84,7 @@ const Layouts = ({ children }) => {
     <Container>
       <Navbar />
       <SectionLayout>
-        {children}
+          {children}
       </SectionLayout>
     </Container>
   )
