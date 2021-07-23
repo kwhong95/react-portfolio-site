@@ -15,6 +15,7 @@ const StorySection = () => {
   const [percent, setPercent] = useState(0)
   const [maskWidth, setMaskWidth] = useState(50)
   const [active, setActive] = useState(false)
+  const [endActive, setEndActive] = useState(false)
 
   const changeOverlap = () => {
     setProperty()
@@ -49,13 +50,19 @@ const StorySection = () => {
     } else {
       setActive(false)
     }
+
+    if (percent >= 70) {
+      setEndActive(true)
+    } else {
+      setEndActive(false)
+    }
   }
 
   useEffect(() => {
     window.addEventListener('scroll', changeOverlap)
 
     return () => window.removeEventListener('scroll', changeOverlap)
-  }, [ changeOverlap ])
+  }, [changeOverlap])
 
   return (
     <Container ref={containerRef}>
@@ -71,7 +78,7 @@ const StorySection = () => {
             style={{ width: `${maskWidth}%` }}
           />
           <BgImage />
-          <EndingText>
+          <EndingText active={endActive}>
             <TableRow>
               <TableCell>
                 <p>Thank you!</p>

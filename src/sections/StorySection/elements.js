@@ -80,6 +80,7 @@ export const EndingText = styled.div`
   height: 100%;
   opacity: 0;
   transition: opacity 1s;
+  color: #111;
   
   :after {
     position: absolute; 
@@ -91,10 +92,10 @@ export const EndingText = styled.div`
     background: rgba(255,255,255,1); 
     content: "";
   }
-  
-  .active {
-    opacity: 1;
-  }
+
+  ${({active}) => active && {
+    opacity: 1
+  }}
 `
 
 export const TableRow = styled.div`
