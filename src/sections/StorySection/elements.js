@@ -33,9 +33,9 @@ export const IntroText = styled.div`
     color: #fff
   }
   
-  .active {
-    opacity: 0;
-  }
+  ${({active}) => active && {
+    opacity: 0
+  }}
 `
 
 export const LeftMask = styled.div`

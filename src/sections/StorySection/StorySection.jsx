@@ -12,10 +12,9 @@ import {
 
 const StorySection = () => {
   const containerRef = useRef(null)
-  const [percent, setPercent] = useState(0);
+  const [percent, setPercent] = useState(0)
   const [maskWidth, setMaskWidth] = useState(50)
-
-  console.log(maskWidth)
+  const [active, setActive] = useState(false)
 
   const changeOverlap = () => {
     setProperty()
@@ -39,10 +38,17 @@ const StorySection = () => {
     let maskStartValue = 50
     let maskEndValue = 0
 
+
     setMaskWidth(Math.max(
       maskEndValue, maskStartValue -
       ((percent/ 100) * maskStartValue)
     ))
+
+    if (percent > 0.3) {
+      setActive(true)
+    } else {
+      setActive(false)
+    }
   }
 
   useEffect(() => {
@@ -55,7 +61,7 @@ const StorySection = () => {
     <Container ref={containerRef}>
       <Content>
         <Stage>
-          <IntroText>
+          <IntroText active={active}>
             <h2>Hello!</h2>
           </IntroText>
           <LeftMask
