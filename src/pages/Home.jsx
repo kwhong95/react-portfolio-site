@@ -11,7 +11,6 @@ const Container = styled(motion.div)`
 const FirstSection = styled.section`
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: 100vh;
   justify-content: center;
   color: lightgray;
@@ -24,7 +23,6 @@ const Home = () => {
   const [position, setPosition] = useState(0)
 
   function onScroll() {
-    console.log(window.scrollY)
     setPosition(window.scrollY)
   }
 
@@ -47,7 +45,7 @@ const Home = () => {
         <h2>I'm Kyle</h2>
         <h2>UX Engineer</h2>
       </FirstSection>
-      <StorySection position={position} />
+      <StorySection />
     </Container>
   )
 }

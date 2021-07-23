@@ -12,7 +12,6 @@ export const Content = styled.article`
   top: 0;
   left: 0;
   height: 100vh;
-  width: 100%;
 `
 
 export const Stage = styled.div`
