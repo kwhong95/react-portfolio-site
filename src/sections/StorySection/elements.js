@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.section`
   position: relative;
   height: 5000px;
+
+  @media ${({theme}) => theme.laptop} {
+    height: 3000px;
+  }
 `
 
 export const Content = styled.article`
@@ -30,7 +34,15 @@ export const IntroText = styled.div`
   h2 {
     font-size: 80px;
     line-height: 1;
-    color: #fff
+    color: #fff;
+    
+    @media ${({theme}) => theme.laptop } {
+      font-size: 50px;
+    }
+
+    @media ${({theme}) => theme.tablet } {
+      font-size: 32px;
+    }
   }
   
   ${({active}) => active && {
@@ -113,6 +125,14 @@ export const TableCell = styled.div`
     font-size: 80px; 
     color:#000; 
     line-height: 1;
+
+    @media ${({theme}) => theme.laptop } {
+      font-size: 50px;
+    }
+
+    @media ${({theme}) => theme.tablet } {
+      font-size: 32px;
+    }
   }
 `
 

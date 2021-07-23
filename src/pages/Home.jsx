@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { pageTransition, HomePageVariants } from '../assets/animations/pageAnimations'
 import styled from 'styled-components'
 import { motion } from 'framer-motion';

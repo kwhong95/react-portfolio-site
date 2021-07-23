@@ -20,7 +20,11 @@ const SectionLayout = styled.div`
 
   @media ${({theme}) => theme.tablet} {
     left: 0;
-    display: flex;
+    width: 100%;
+  }
+
+  @media ${({theme}) => theme.laptop} {
+    left: 0;
     width: 100%;
   }
 `

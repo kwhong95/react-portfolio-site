@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
   Container,
   Content,
@@ -17,12 +17,7 @@ const StorySection = () => {
   const [active, setActive] = useState(false)
   const [endActive, setEndActive] = useState(false)
 
-  const changeOverlap = () => {
-    setProperty()
-    motionRender()
-  }
-
-  const setProperty = () => {
+  const setProperty = useCallback(() => {
     const container = containerRef.current
     let scrollHeight = container.clientHeight
     let sectionOffsetTop = container.offsetTop
@@ -31,11 +26,12 @@ const StorySection = () => {
     let sectionScrollTop = winScrollTop - sectionOffsetTop
 
     let scrollPercent = sectionScrollTop / realScrollHeight
+
     setPercent(scrollPercent * 100)
 
-  }
+  }, [containerRef])
 
-  const motionRender = () => {
+  const motionRender = useCallback( () => {
     let maskStartValue = 50
     let maskEndValue = 0
 
@@ -56,13 +52,23 @@ const StorySection = () => {
     } else {
       setEndActive(false)
     }
-  }
+  }, [ percent ])
 
   useEffect(() => {
+
+    const changeOverlap = () => {
+      window.addEventListener('resize', changeOverlap, false)
+      setProperty()
+      motionRender()
+    }
+
     window.addEventListener('scroll', changeOverlap)
 
-    return () => window.removeEventListener('scroll', changeOverlap)
-  }, [changeOverlap])
+    return () => {
+      window.removeEventListener('resize', changeOverlap, false)
+      window.removeEventListener('scroll', changeOverlap);
+    }
+  }, [ motionRender, containerRef, setProperty ])
 
   return (
     <Container ref={containerRef}>
