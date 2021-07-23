@@ -8,7 +8,6 @@ import Modal from 'react-modal'
 
 const Container = styled.div`
   display: flex;
-  overflow: hidden;
 `
 
 const SectionLayout = styled.div`

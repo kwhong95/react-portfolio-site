@@ -2,17 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { pageTransition, HomePageVariants } from '../assets/animations/pageAnimations'
 import styled from 'styled-components'
 import { motion } from 'framer-motion';
+import StorySection from '../sections/StorySection/StorySection';
 
 const Container = styled(motion.div)`
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  position: relative;
 `
 
-const Section = styled.section`
+const FirstSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   height: 100vh;
+  justify-content: center;
+  color: lightgray;
+  margin-left: 2em;
+  font-size: 40px;
 `
 
 
@@ -38,12 +42,12 @@ const Home = () => {
       variants={HomePageVariants}
       transition={pageTransition}
     >
-      <Section>
-        section1
-      </Section>
-      <Section>
-        section2
-      </Section>
+      <FirstSection>
+        <h2>Hi,</h2>
+        <h2>I'm Kyle</h2>
+        <h2>UX Engineer</h2>
+      </FirstSection>
+      <StorySection position={position} />
     </Container>
   )
 }
