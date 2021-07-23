@@ -4,5 +4,13 @@
     "paths": {
       "*": ["src/*"]
     }
-  }
+  },
+  "minify": true,
+  "options": [
+    "setClasses"
+  ],
+  "feature-detects": [
+    "test/css/positionsticky",
+    "test/css/transforms"
+  ]
 }

@@ -3,6 +3,7 @@ import { pageTransition, HomePageVariants } from '../assets/animations/pageAnima
 import styled from 'styled-components'
 import { motion } from 'framer-motion';
 import StorySection from '../sections/StorySection/StorySection';
+import ScrollDown from '../components/ScrollDown';
 
 const Container = styled(motion.div)`
   position: relative;
@@ -30,9 +31,10 @@ const Home = () => {
       transition={pageTransition}
     >
       <FirstSection>
-        <h2>Hi,</h2>
-        <h2>I'm Kyle</h2>
+        <h2>Hi ,</h2>
+        <h2>I'm Kyle ,</h2>
         <h2>UX Engineer</h2>
+      <ScrollDown />
       </FirstSection>
       <StorySection />
     </Container>
