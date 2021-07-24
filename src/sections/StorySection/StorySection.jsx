@@ -38,7 +38,7 @@ const StorySection = () => {
 
     setMaskWidth(Math.max(
       maskEndValue, maskStartValue -
-      ((percent/ 100) * maskStartValue)
+      ((percent / 30) * maskStartValue)
     ))
 
     if (percent > 0.3) {
@@ -47,7 +47,7 @@ const StorySection = () => {
       setActive(false)
     }
 
-    if (percent >= 70) {
+    if (percent >= 80) {
       setEndActive(true)
     } else {
       setEndActive(false)

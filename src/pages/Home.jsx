@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion';
 import StorySection from '../sections/StorySection/StorySection';
 import ScrollDown from '../components/ScrollDown';
+import Background from '../components/Background';
 
 const Container = styled(motion.div)`
   position: relative;
@@ -30,6 +31,7 @@ const Home = () => {
       variants={HomePageVariants}
       transition={pageTransition}
     >
+      <Background />
       <FirstSection>
         <h2>Hi ,</h2>
         <h2>I'm Kyle ,</h2>
