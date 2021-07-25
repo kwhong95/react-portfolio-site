@@ -1,13 +1,12 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Cursor, Wrap } from './elements';
+import React, { useCallback, useEffect, useState } from 'react';
+import { BackgroundImg, Cursor } from './elements';
 
 const Background = () => {
-  const bgRef = useRef(null)
   const [cursorX, setCursorX] = useState()
   const [cursorY, setCursorY] = useState()
 
   const handleCursor = useCallback( (e) => {
-    setCursorX(e.pageX)
+    setCursorX(e.pageX - 100)
     setCursorY(e.pageY)
   }, [])
 
@@ -21,7 +20,7 @@ const Background = () => {
   return (
     <>
       <Cursor cursorX={cursorX} cursorY={cursorY} />
-      <Wrap ref={bgRef} />
+      <BackgroundImg cursorX={cursorX} cursorY={cursorY}  />
     </>
   )
 }

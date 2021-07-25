@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { pageTransition, HomePageVariants } from '../assets/animations/pageAnimations'
 import styled from 'styled-components'
 import { motion } from 'framer-motion';
@@ -31,12 +31,12 @@ const Home = () => {
       variants={HomePageVariants}
       transition={pageTransition}
     >
-      <Background />
       <FirstSection>
+        <Background />
         <h2>Hi ,</h2>
         <h2>I'm Kyle ,</h2>
         <h2>UX Engineer</h2>
-      <ScrollDown />
+        <ScrollDown />
       </FirstSection>
       <StorySection />
     </Container>
