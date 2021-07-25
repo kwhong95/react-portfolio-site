@@ -13,8 +13,7 @@ const Background = () => {
   useEffect(() => {
     window.addEventListener('mousemove', handleCursor)
 
-    return () => { window.removeEventListener('mouseover', handleCursor)}
-
+    return () => { window.removeEventListener('mousemove', handleCursor)}
   }, [ handleCursor ])
 
   return (

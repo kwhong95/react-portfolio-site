@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     user-select: none;
     font-family: 'Pacifico', cursive;
-    background-color: #000;
+    background-color: #151515;
   }
 `
 
