@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { BackgroundImg, Cursor } from './elements';
 
 const Background = () => {
@@ -18,8 +18,14 @@ const Background = () => {
 
   return (
     <>
-      <Cursor cursorX={cursorX} cursorY={cursorY} />
-      <BackgroundImg cursorX={cursorX} cursorY={cursorY}  />
+      <Cursor
+        cursorX={cursorX}
+        cursorY={cursorY}
+      />
+      <BackgroundImg
+        cursorX={cursorX}
+        cursorY={cursorY}
+      />
     </>
   )
 }

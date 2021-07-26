@@ -1,7 +1,17 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import background from '../../assets/images/bg.png'
 
-export const BackgroundImg = styled.figure.attrs(props=> ({
+
+export const motionBg = keyframes`
+ to { 
+   background-image: url(${background});
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
+ ;}
+`
+
+export const BackgroundImg = styled.figure.attrs(props => ({
   style: {
     clipPath: `circle(20% at 
     ${props.cursorX}px 
@@ -13,12 +23,11 @@ export const BackgroundImg = styled.figure.attrs(props=> ({
   right: 0;
   width: 100%;
   height: 100vh;
-  opacity: .7;
   cursor: none;
-  background-image: url(${background});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+   
+  animation-name: ${motionBg};
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
 `
 
 
