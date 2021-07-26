@@ -5,7 +5,7 @@ const Background = () => {
   const [cursorX, setCursorX] = useState()
   const [cursorY, setCursorY] = useState()
 
-  const handleCursor = useCallback( (e) => {
+  const handleCursor = useCallback((e) => {
     setCursorX(e.pageX - 100)
     setCursorY(e.pageY)
   }, [])

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import StorySection from '../sections/StorySection/StorySection';
 import ScrollDown from '../components/ScrollDown';
 import Background from '../components/Background';
+import { theme } from '../assets/styles/theme';
 
 const Container = styled(motion.div)`
   position: relative;
@@ -17,8 +18,16 @@ const FirstSection = styled.section`
   justify-content: center;
   color: lightgray;
   margin-left: 2em;
-  font-size: 40px;
-`
+  font-size: ${theme.fontSize.lg};
+  
+  @media ${theme.mobile} {
+    font-size: ${theme.fontSize.sm};
+  }
+  
+  @media ${theme.tablet} {
+    font-size: ${theme.fontSize.xl}
+  }
+ `
 
 
 const Home = () => {
